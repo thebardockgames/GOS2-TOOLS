@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace NGE_ANIMA_GAME_TOOLS
@@ -34,6 +35,18 @@ namespace NGE_ANIMA_GAME_TOOLS
                 }
             });
         }
+
+        private void listBoxImages1(object sender, EventArgs e)
+        {
+
+        }
+        public void button1_Click_1(object sender, EventArgs e)
+        {
+            client.UpdateDetails("Visualizador BMP´S");
+            abrirformhija(new bmpviewer());
+            client.UpdateDetails("Visualizador BMP´S");
+        }
+
 
         public DiscordRpcClient client;
         private bool initalized = false;
@@ -117,6 +130,13 @@ namespace NGE_ANIMA_GAME_TOOLS
             client.UpdateDetails("Convirtiendo archivos");
         }
 
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            client.UpdateDetails("Editando dialogos");
+            abrirformhija(new Dialogos());
+            client.UpdateDetails("Editando dialogos");
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Process.Start("https://twitter.com/TheBardockGames");
@@ -168,20 +188,10 @@ namespace NGE_ANIMA_GAME_TOOLS
             Application.Exit();
         }
 
-        public void button1_Click_1(object sender, EventArgs e)
-        {
-            client.UpdateDetails("Editando bmp´s");
-            abrirformhija(new bmpviewer());
-            client.UpdateDetails("Editando bmp´s");
-        }
+
 
         public void home_Activated(object sender, EventArgs e)
         {
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            client.UpdateDetails("prueba1");
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -208,5 +218,17 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             button1.ForeColor = Color.FromArgb(255, 255, 255);
         }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            button2.ForeColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.ForeColor = Color.FromArgb(255, 255, 255);
+        }
+
+
     }
 }

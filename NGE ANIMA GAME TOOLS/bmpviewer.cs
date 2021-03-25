@@ -9,11 +9,14 @@ namespace NGE_ANIMA_GAME_TOOLS
 {
     public partial class bmpviewer : Form
     {
+        public string bp3temp;
         private int mov;
         private int movX;
         private int movY;
 
         public DiscordRpcClient client;
+
+
 
         public bmpviewer()
         {
@@ -28,18 +31,16 @@ namespace NGE_ANIMA_GAME_TOOLS
             }
         }
 
-        private void bmpviewer_Load(object sender, EventArgs e)
-        {
-        }
-
         public void listBoxImages_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             string image = listBoxImages.SelectedItem.ToString();
             string fileimage = Path.Combine(Path.GetDirectoryName(image), Path.GetFileNameWithoutExtension(image));
             string filepath = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + image;
             string imagefile = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + fileimage + ".bmp";
             string bp3temp = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\temp.gos";
             string bmptemp = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\temp.bmp";
+
 
             if (File.Exists(bp3temp))
             {

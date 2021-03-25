@@ -91,6 +91,12 @@
     <Compile Include="Convertidores.Designer.cs">
       <DependentUpon>Convertidores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogos.Designer.cs">
+      <DependentUpon>Dialogos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Empaquetadores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Convertidores.resx">
       <DependentUpon>Convertidores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogos.resx">
+      <DependentUpon>Dialogos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empaquetadores.resx">
       <DependentUpon>Empaquetadores.cs</DependentUpon>
@@ -172,6 +181,7 @@
     <Content Include="eva-black2.ico" />
     <Content Include="eva_black_HJx_icon.ico" />
     <Content Include="eva__white_AI3_icon.ico" />
+    <None Include="Resources\base.png" />
     <None Include="Resources\minimize-icon-black.png" />
     <None Include="Resources\minimize-icon1.png" />
     <None Include="Resources\minimize-icon.png" />

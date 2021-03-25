@@ -1,7 +1,7 @@
 ﻿
 namespace NGE_ANIMA_GAME_TOOLS
 {
-    partial class bmpviewer
+    partial class Dialogos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,31 +29,30 @@ namespace NGE_ANIMA_GAME_TOOLS
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bmpviewer));
-            this.bmpfiles = new System.Windows.Forms.ImageList(this.components);
+            this.listBoxtxt = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.compilarbutton = new System.Windows.Forms.Button();
             this.extraerbutton = new System.Windows.Forms.Button();
             this.filename_label = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.listBoxImages = new System.Windows.Forms.ListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.Filedialogbmp = new System.Windows.Forms.OpenFileDialog();
-            this.folderBrowserDialogbmp = new System.Windows.Forms.FolderBrowserDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // bmpfiles
+            // listBoxtxt
             // 
-            this.bmpfiles.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.bmpfiles.ImageSize = new System.Drawing.Size(16, 16);
-            this.bmpfiles.TransparentColor = System.Drawing.Color.Transparent;
+            this.listBoxtxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(180)))));
+            this.listBoxtxt.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBoxtxt.ForeColor = System.Drawing.Color.White;
+            this.listBoxtxt.FormattingEnabled = true;
+            this.listBoxtxt.Location = new System.Drawing.Point(3, 89);
+            this.listBoxtxt.Name = "listBoxtxt";
+            this.listBoxtxt.Size = new System.Drawing.Size(114, 199);
+            this.listBoxtxt.TabIndex = 0;
+            this.listBoxtxt.SelectedIndexChanged += new System.EventHandler(this.listBoxtxt_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -61,15 +60,15 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.groupBox1.Controls.Add(this.extraerbutton);
             this.groupBox1.Controls.Add(this.filename_label);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.listBoxImages);
+            this.groupBox1.Controls.Add(this.listBoxtxt);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(542, 149);
+            this.groupBox1.Location = new System.Drawing.Point(547, 154);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(120, 291);
-            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Imagenes";
+            this.groupBox1.Text = "Archivos";
             // 
             // compilarbutton
             // 
@@ -81,7 +80,6 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.compilarbutton.TabIndex = 11;
             this.compilarbutton.Text = "Compilar";
             this.compilarbutton.UseVisualStyleBackColor = true;
-            this.compilarbutton.Click += new System.EventHandler(this.compilarbutton_Click);
             // 
             // extraerbutton
             // 
@@ -93,7 +91,6 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.extraerbutton.TabIndex = 10;
             this.extraerbutton.Text = "Extraer";
             this.extraerbutton.UseVisualStyleBackColor = true;
-            this.extraerbutton.Click += new System.EventHandler(this.extraerbutton_Click);
             // 
             // filename_label
             // 
@@ -115,102 +112,72 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.button1.TabIndex = 8;
             this.button1.Text = "Reemplazar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // listBoxImages
-            // 
-            this.listBoxImages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(180)))));
-            this.listBoxImages.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listBoxImages.ForeColor = System.Drawing.Color.White;
-            this.listBoxImages.FormattingEnabled = true;
-            this.listBoxImages.Location = new System.Drawing.Point(3, 89);
-            this.listBoxImages.Name = "listBoxImages";
-            this.listBoxImages.Size = new System.Drawing.Size(114, 199);
-            this.listBoxImages.TabIndex = 0;
-            this.listBoxImages.SelectedIndexChanged += new System.EventHandler(this.listBoxImages_SelectedIndexChanged);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(7, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(528, 437);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Visualizador";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::NGE_ANIMA_GAME_TOOLS.Properties.Resources.eva_black;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 15);
+            this.pictureBox1.Image = global::NGE_ANIMA_GAME_TOOLS.Properties.Resources._base;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 301);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(516, 416);
+            this.pictureBox1.Size = new System.Drawing.Size(542, 160);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox4
+            // textBox1
             // 
-            this.pictureBox4.Image = global::NGE_ANIMA_GAME_TOOLS.Properties.Resources.eva__white;
-            this.pictureBox4.Location = new System.Drawing.Point(542, 11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(118, 132);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(25, 191);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(496, 97);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Filedialogbmp
+            // textBox2
             // 
-            this.Filedialogbmp.DefaultExt = "bmp";
-            this.Filedialogbmp.FileName = "BMP";
-            this.Filedialogbmp.Filter = "\"bmp files\" (*.bmp)|*.bmp";
-            this.Filedialogbmp.InitialDirectory = "C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2";
-            this.Filedialogbmp.Title = "Selecciona una imagen BMP";
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(43)))), ((int)(((byte)(0)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))));
+            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textBox2.Location = new System.Drawing.Point(34, 332);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(480, 88);
+            this.textBox2.TabIndex = 6;
             // 
-            // folderBrowserDialogbmp
-            // 
-            this.folderBrowserDialogbmp.SelectedPath = "C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2";
-            // 
-            // bmpviewer
+            // Dialogos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(180)))));
-            this.ClientSize = new System.Drawing.Size(672, 448);
-            this.Controls.Add(this.pictureBox4);
+            this.ClientSize = new System.Drawing.Size(671, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "bmpviewer";
-            this.Text = "Form2";
+            this.Name = "Dialogos";
+            this.Text = "Dialogos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ImageList bmpfiles;
+        public System.Windows.Forms.ListBox listBoxtxt;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.ListBox listBoxImages;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.OpenFileDialog Filedialogbmp;
-        private System.Windows.Forms.Label filename_label;
         private System.Windows.Forms.Button compilarbutton;
         private System.Windows.Forms.Button extraerbutton;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogbmp;
+        private System.Windows.Forms.Label filename_label;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

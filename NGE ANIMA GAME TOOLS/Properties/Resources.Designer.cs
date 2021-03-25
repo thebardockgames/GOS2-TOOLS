@@ -63,6 +63,16 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _base {
+            get {
+                object obj = ResourceManager.GetObject("base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cruz_white {
             get {
                 object obj = ResourceManager.GetObject("cruz_white", resourceCulture);
