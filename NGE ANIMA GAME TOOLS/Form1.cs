@@ -106,22 +106,29 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void DESEMPAQUETAR_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk", openFileDialog1.SafeFileName);
-                System.Threading.Thread.Sleep(2000);
-                if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\t1101.tx3"))
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Operacion Exitosa");
+                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk", openFileDialog1.SafeFileName);
+                    System.Threading.Thread.Sleep(2000);
+                    if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\t1101.tx3"))
+                    {
+                        MessageBox.Show("Operacion Exitosa");
+                        return;
+                    }
+                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
-                MessageBox.Show("Operacion Fallida");
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show("Seleccione un archivo valido\n " + ex );
                 return;
             }
 
-            MessageBox.Show("Seleccione un archivo valido");
-            return;
-        }
+               
+            } 
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -229,6 +236,9 @@ namespace NGE_ANIMA_GAME_TOOLS
             button2.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
