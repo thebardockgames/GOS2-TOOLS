@@ -73,12 +73,12 @@ namespace NGE_ANIMA_GAME_TOOLS
             DialogResult dialogResult = MessageBox.Show("Deseas compilar el texto?", "Confirmacion", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst.txt exec");
+                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst.txt exec");
                 System.Threading.Thread.Sleep(1500);
                 DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                 if (dialogResult1 == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
+                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
                     return;
                 }
                 else if (dialogResult1 == DialogResult.No)
@@ -100,16 +100,24 @@ namespace NGE_ANIMA_GAME_TOOLS
                 System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                 System.Threading.Thread.Sleep(1500);
                 DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
-                if (dialogResult1 == DialogResult.Yes)
+
+                try
                 {
-                    System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
-                    return;
+                    if (dialogResult1 == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
+                        return;
+                    }
+                    else if (dialogResult1 == DialogResult.No)
+                    {
+                        return;
+                    }
                 }
-                else if (dialogResult1 == DialogResult.No)
-                {
-                    return;
+                catch (Exception ex) {
+                    MessageBox.Show("Error ", "Error: " + ex.Message); // ex almacena el error obtenido del sistema
+                    }
                 }
-            }
+            
             else if (dialogResult == DialogResult.No)
             {
                 return;

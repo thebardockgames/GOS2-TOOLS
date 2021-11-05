@@ -123,7 +123,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             }
             catch (Exception ex) {
 
-                MessageBox.Show("Seleccione un archivo valido\n " + ex );
+                MessageBox.Show("Seleccione un archivo valido\n " + ex.Message );
                 return;
             }
 
