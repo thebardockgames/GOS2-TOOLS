@@ -57,9 +57,10 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.listBoxtxt.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxtxt.ForeColor = System.Drawing.Color.White;
             this.listBoxtxt.FormattingEnabled = true;
-            this.listBoxtxt.Location = new System.Drawing.Point(3, 39);
+            this.listBoxtxt.ItemHeight = 12;
+            this.listBoxtxt.Location = new System.Drawing.Point(3, 42);
             this.listBoxtxt.Name = "listBoxtxt";
-            this.listBoxtxt.Size = new System.Drawing.Size(114, 199);
+            this.listBoxtxt.Size = new System.Drawing.Size(114, 196);
             this.listBoxtxt.TabIndex = 0;
             this.listBoxtxt.SelectedIndexChanged += new System.EventHandler(this.listBoxtxt_SelectedIndexChanged);
             // 
@@ -68,7 +69,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.groupBox1.Controls.Add(this.compilarbutton);
             this.groupBox1.Controls.Add(this.filename_label);
             this.groupBox1.Controls.Add(this.listBoxtxt);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(539, 54);
             this.groupBox1.Name = "groupBox1";
@@ -165,9 +166,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // linecounter1
             // 
             this.linecounter1.AutoSize = true;
+            this.linecounter1.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linecounter1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.linecounter1.Location = new System.Drawing.Point(37, 174);
             this.linecounter1.Name = "linecounter1";
-            this.linecounter1.Size = new System.Drawing.Size(35, 13);
+            this.linecounter1.Size = new System.Drawing.Size(38, 12);
             this.linecounter1.TabIndex = 12;
             this.linecounter1.Text = "label1";
             // 
@@ -184,9 +187,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // dcombcheck
             // 
             this.dcombcheck.AutoSize = true;
-            this.dcombcheck.Location = new System.Drawing.Point(228, 173);
+            this.dcombcheck.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dcombcheck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dcombcheck.Location = new System.Drawing.Point(214, 173);
             this.dcombcheck.Name = "dcombcheck";
-            this.dcombcheck.Size = new System.Drawing.Size(118, 17);
+            this.dcombcheck.Size = new System.Drawing.Size(131, 16);
             this.dcombcheck.TabIndex = 14;
             this.dcombcheck.Text = "Dialogo Combinado";
             this.dcombcheck.UseVisualStyleBackColor = true;
@@ -217,9 +222,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(37, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 13);
+            this.label1.Size = new System.Drawing.Size(217, 12);
             this.label1.TabIndex = 17;
             this.label1.Text = "(USO SOLO EN MODO COMBINADO)";
             // 
