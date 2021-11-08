@@ -50,7 +50,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.tx3_txt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.tx3_txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.tx3_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tx3_txt.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tx3_txt.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tx3_txt.ForeColor = System.Drawing.Color.White;
             this.tx3_txt.Location = new System.Drawing.Point(74, 155);
             this.tx3_txt.Name = "tx3_txt";
@@ -68,7 +68,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(74, 193);
             this.button1.Name = "button1";
@@ -98,7 +98,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.bmp_bp3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.bmp_bp3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.bmp_bp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bmp_bp3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmp_bp3.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bmp_bp3.ForeColor = System.Drawing.Color.White;
             this.bmp_bp3.Location = new System.Drawing.Point(72, 323);
             this.bmp_bp3.Name = "bmp_bp3";
@@ -116,7 +116,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.bp3_bmp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.bp3_bmp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.bp3_bmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bp3_bmp.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bp3_bmp.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bp3_bmp.ForeColor = System.Drawing.Color.White;
             this.bp3_bmp.Location = new System.Drawing.Point(72, 285);
             this.bp3_bmp.Name = "bp3_bmp";
@@ -131,11 +131,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // dialogos_label
             // 
             this.dialogos_label.AutoSize = true;
-            this.dialogos_label.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dialogos_label.Font = new System.Drawing.Font("Laffayette Comic Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dialogos_label.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.dialogos_label.Location = new System.Drawing.Point(90, 131);
             this.dialogos_label.Name = "dialogos_label";
-            this.dialogos_label.Size = new System.Drawing.Size(89, 17);
+            this.dialogos_label.Size = new System.Drawing.Size(97, 17);
             this.dialogos_label.TabIndex = 1;
             this.dialogos_label.Text = "DIALOGOS";
             this.dialogos_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,11 +143,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // imagenes_label
             // 
             this.imagenes_label.AutoSize = true;
-            this.imagenes_label.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imagenes_label.Font = new System.Drawing.Font("Laffayette Comic Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imagenes_label.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.imagenes_label.Location = new System.Drawing.Point(90, 251);
             this.imagenes_label.Name = "imagenes_label";
-            this.imagenes_label.Size = new System.Drawing.Size(90, 17);
+            this.imagenes_label.Size = new System.Drawing.Size(101, 17);
             this.imagenes_label.TabIndex = 7;
             this.imagenes_label.Text = "IMAGENES";
             this.imagenes_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

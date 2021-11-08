@@ -62,7 +62,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.groupBox1.Controls.Add(this.filename_label);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.listBoxImages);
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(542, 149);
             this.groupBox1.Name = "groupBox1";
@@ -123,16 +123,17 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.listBoxImages.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxImages.ForeColor = System.Drawing.Color.White;
             this.listBoxImages.FormattingEnabled = true;
-            this.listBoxImages.Location = new System.Drawing.Point(3, 89);
+            this.listBoxImages.ItemHeight = 12;
+            this.listBoxImages.Location = new System.Drawing.Point(3, 92);
             this.listBoxImages.Name = "listBoxImages";
-            this.listBoxImages.Size = new System.Drawing.Size(114, 199);
+            this.listBoxImages.Size = new System.Drawing.Size(114, 196);
             this.listBoxImages.TabIndex = 0;
             this.listBoxImages.SelectedIndexChanged += new System.EventHandler(this.listBoxImages_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(7, 3);
             this.groupBox2.Name = "groupBox2";

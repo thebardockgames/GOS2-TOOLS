@@ -45,6 +45,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelcontenedor = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,11 +102,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Enabled = false;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 9);
+            this.label1.Location = new System.Drawing.Point(24, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 15);
+            this.label1.Size = new System.Drawing.Size(103, 14);
             this.label1.TabIndex = 1;
             this.label1.Text = "GOS2 TOOLS";
             // 
@@ -116,11 +117,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.DESEMPAQUETAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.DESEMPAQUETAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.DESEMPAQUETAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DESEMPAQUETAR.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DESEMPAQUETAR.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DESEMPAQUETAR.ForeColor = System.Drawing.Color.White;
-            this.DESEMPAQUETAR.Location = new System.Drawing.Point(7, 297);
+            this.DESEMPAQUETAR.Location = new System.Drawing.Point(7, 309);
             this.DESEMPAQUETAR.Name = "DESEMPAQUETAR";
-            this.DESEMPAQUETAR.Size = new System.Drawing.Size(134, 23);
+            this.DESEMPAQUETAR.Size = new System.Drawing.Size(134, 38);
             this.DESEMPAQUETAR.TabIndex = 2;
             this.DESEMPAQUETAR.Text = "DESEMPAQUETAR";
             this.DESEMPAQUETAR.UseVisualStyleBackColor = false;
@@ -135,13 +136,13 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.empaquetadores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.empaquetadores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.empaquetadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empaquetadores.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empaquetadores.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empaquetadores.ForeColor = System.Drawing.Color.White;
             this.empaquetadores.Location = new System.Drawing.Point(7, 194);
             this.empaquetadores.Name = "empaquetadores";
             this.empaquetadores.Size = new System.Drawing.Size(134, 23);
             this.empaquetadores.TabIndex = 3;
-            this.empaquetadores.Text = "EMPAQUETADORES";
+            this.empaquetadores.Text = "EMPAQUETAR";
             this.empaquetadores.UseVisualStyleBackColor = false;
             this.empaquetadores.Click += new System.EventHandler(this.button1_Click);
             this.empaquetadores.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
@@ -154,7 +155,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.convertidores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.convertidores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.convertidores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.convertidores.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.convertidores.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.convertidores.ForeColor = System.Drawing.Color.White;
             this.convertidores.Location = new System.Drawing.Point(7, 158);
             this.convertidores.Name = "convertidores";
@@ -176,12 +177,14 @@ namespace NGE_ANIMA_GAME_TOOLS
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(28)))), ((int)(((byte)(104)))));
+            this.label2.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(4, 467);
+            this.label2.Location = new System.Drawing.Point(7, 449);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 13);
+            this.label2.Size = new System.Drawing.Size(141, 12);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Creador: TheBardockGames";
+            this.label2.Text = "2021 -Anima Scalations.";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -190,11 +193,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(7, 232);
+            this.button1.Location = new System.Drawing.Point(7, 223);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 23);
+            this.button1.Size = new System.Drawing.Size(134, 37);
             this.button1.TabIndex = 6;
             this.button1.Text = "VISUALIZADOR BMP";
             this.button1.UseVisualStyleBackColor = false;
@@ -205,9 +208,13 @@ namespace NGE_ANIMA_GAME_TOOLS
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(28)))), ((int)(((byte)(104)))));
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.DESEMPAQUETAR);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(148, 506);
@@ -221,11 +228,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(7, 266);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 23);
+            this.button2.Size = new System.Drawing.Size(134, 37);
             this.button2.TabIndex = 9;
             this.button2.Text = "EDITOR DIALOGOS";
             this.button2.UseVisualStyleBackColor = false;
@@ -265,6 +272,18 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(28)))), ((int)(((byte)(104)))));
+            this.label3.Font = new System.Drawing.Font("Laffayette Comic Pro", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(94, 468);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 12);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "v. 1.2.23";
+            // 
             // home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,11 +291,8 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(820, 484);
             this.Controls.Add(this.panelcontenedor);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.convertidores);
             this.Controls.Add(this.empaquetadores);
-            this.Controls.Add(this.DESEMPAQUETAR);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -294,7 +310,6 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.panelcontenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -315,6 +330,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

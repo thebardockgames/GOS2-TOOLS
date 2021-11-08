@@ -15,6 +15,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         private int movX;
         private int movY;
 
+
         public home()
         {
             InitializeComponent();
@@ -110,6 +111,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    
                     Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk", openFileDialog1.SafeFileName);
                     System.Threading.Thread.Sleep(2000);
                     if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\t1101.tx3"))
@@ -237,6 +239,11 @@ namespace NGE_ANIMA_GAME_TOOLS
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
