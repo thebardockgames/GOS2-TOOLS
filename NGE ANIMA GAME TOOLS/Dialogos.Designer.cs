@@ -262,6 +262,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dialogos";
             this.Text = "Dialogos";
+            this.Load += new System.EventHandler(this.Dialogos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
