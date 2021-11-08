@@ -20,14 +20,20 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         public bmpviewer()
         {
-            InitializeComponent();
-            listBoxImages.Items.Clear();
-            string folder = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2";
-            string[] txtfiles = Directory.GetFiles(folder, "*.bp3");
-
-            foreach (var item in txtfiles)
+            try
             {
-                listBoxImages.Items.Add(Path.GetFileName(item));
+                InitializeComponent();
+                listBoxImages.Items.Clear();
+                string folder = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2";
+                string[] txtfiles = Directory.GetFiles(folder, "*.bp3");
+
+                foreach (var item in txtfiles)
+                {
+                    listBoxImages.Items.Add(Path.GetFileName(item));
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Error encontrado");
             }
         }
 
