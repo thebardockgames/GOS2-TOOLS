@@ -21,16 +21,22 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         public Dialogos()
         {
-            InitializeComponent();
-            listBoxtxt.Items.Clear();
-            string folder = Pathgame;
-            string[] txtfiles = Directory.GetFiles(folder, "*.txt");
-            linecounter1.Text = "Linea: " + linecounter.ToString() + "/" + cantidadindex.ToString();
-
-
-            foreach (var item in txtfiles)
+            try
             {
-                listBoxtxt.Items.Add(Path.GetFileName(item));
+                InitializeComponent();
+                listBoxtxt.Items.Clear();
+                string folder = Pathgame;
+                string[] txtfiles = Directory.GetFiles(folder, "*.txt");
+                linecounter1.Text = "Linea: " + linecounter.ToString() + "/" + cantidadindex.ToString();
+
+
+                foreach (var item in txtfiles)
+                {
+                    listBoxtxt.Items.Add(Path.GetFileName(item));
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Error al ejecutar");
             }
         }
 
