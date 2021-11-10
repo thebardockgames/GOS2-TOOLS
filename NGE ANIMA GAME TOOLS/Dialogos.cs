@@ -46,7 +46,6 @@ namespace NGE_ANIMA_GAME_TOOLS
         List<string> lista = new List<string>();
         string line;
         string lineanterior;
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (dcombcheck.Checked == true)
@@ -86,8 +85,8 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string arrobab = "@n";
                 if (textBox2.Text.Contains(arrobab))
                 {
-                    var sinarrobab = textob4.Replace("@n", System.Environment.NewLine);
-                    var sinarrobac = textocf.Replace("@n", System.Environment.NewLine);
+                    var sinarrobab = textob4.Replace("@n", Environment.NewLine);
+                    var sinarrobac = textocf.Replace("@n", Environment.NewLine);
                     textBox2.Text = sinarrobac + sinarrobab;
                     return;
                 }
@@ -105,7 +104,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string arroba = "@n";
                 if (textBox2.Text.Contains(arroba))
                 {
-                    var sinarroba = texto4.Replace("@n", System.Environment.NewLine);
+                    var sinarroba = texto4.Replace("@n", Environment.NewLine);
                     textBox2.Text = sinarroba;
 
                 }
@@ -152,8 +151,8 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string arrobab = "@n";
                 if (textBox2.Text.Contains(arrobab))
                 {
-                    var sinarrobab = textob4.Replace("@n", System.Environment.NewLine);
-                    var sinarrobac = textocf.Replace("@n", System.Environment.NewLine);
+                    var sinarrobab = textob4.Replace("@n", Environment.NewLine);
+                    var sinarrobac = textocf.Replace("@n", Environment.NewLine);
                     textBox2.Text = sinarrobac + sinarrobab;
                     return;
 
@@ -167,7 +166,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             {
                 return;
             }
-            System.IO.StreamReader file = new System.IO.StreamReader(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
+            StreamReader file = new StreamReader(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
             filetxtname = listBoxtxt.SelectedItem.ToString();
             lista.Clear();
             linecounter = 0;
@@ -259,7 +258,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             string path = Pathgame + filetxtname;
             List<string> lines = System.IO.File.ReadAllLines(path).ToList<string>();
             lines[linea1] = textBox1.Text;
-            System.IO.File.WriteAllLines(path, lines, Encoding.Default);
+            File.WriteAllLines(path, lines, Encoding.Default);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -418,7 +417,12 @@ namespace NGE_ANIMA_GAME_TOOLS
             string path = Pathgame + filetxtname;
             List<string> lines = System.IO.File.ReadAllLines(path).ToList<string>();
             lines[linea2] = textBox3.Text;
-            System.IO.File.WriteAllLines(path, lines, Encoding.Default);
+            File.WriteAllLines(path, lines, Encoding.Default);
+        }
+
+        private void Dialogos_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Dialogos_Load(object sender, EventArgs e)
