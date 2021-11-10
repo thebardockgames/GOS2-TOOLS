@@ -58,7 +58,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             }
             File.Copy(filepath, bp3temp);
 
-            Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3un1.exe.lnk", "temp.gos");
+            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3un1.exe.lnk", "temp.gos");
             System.Threading.Thread.Sleep(150);
             FileStream fs = new FileStream(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\temp.bmp", FileMode.Open, FileAccess.Read);
             pictureBox1.Image = System.Drawing.Image.FromStream(fs);
@@ -87,11 +87,11 @@ namespace NGE_ANIMA_GAME_TOOLS
                     {
                         File.Delete(imagenreemplazar);
                         File.Copy(Filedialogbmp.FileName, imagenreemplazar);
-                        Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
+                        System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
                         DialogResult compilar1 = MessageBox.Show("Desea compilar?", "Confirmacion", MessageBoxButtons.YesNo);
                         if (compilar1 == DialogResult.Yes)
                         {
-                            Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
+                            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                             System.Threading.Thread.Sleep(1500);
                             DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                             if (dialogResult1 == DialogResult.Yes)
@@ -110,11 +110,11 @@ namespace NGE_ANIMA_GAME_TOOLS
                     }
 
                     File.Copy(Filedialogbmp.FileName, imagenreemplazar);
-                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
+                    System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
                     DialogResult compilar = MessageBox.Show("Desea compilar?", "Confirmacion", MessageBoxButtons.YesNo);
                     if (compilar == DialogResult.Yes)
                     {
-                        Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
+                        System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                         System.Threading.Thread.Sleep(1500);
                         DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Quieres iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                         if (dialogResult1 == DialogResult.Yes)
@@ -170,7 +170,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             DialogResult compilar = MessageBox.Show("Quieres compilar las imagenes?", "Confirmacion", MessageBoxButtons.YesNo);
             if (compilar == DialogResult.Yes)
             {
-                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                 System.Threading.Thread.Sleep(1500);
                 DialogResult rungos = MessageBox.Show("Empaquetado exitoso, Quieres iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                 if (rungos == DialogResult.Yes)
