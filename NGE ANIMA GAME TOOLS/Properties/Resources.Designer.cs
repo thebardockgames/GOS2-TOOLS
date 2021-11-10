@@ -123,9 +123,39 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap facebook {
+            get {
+                object obj = ResourceManager.GetObject("facebook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flecha_black {
             get {
                 object obj = ResourceManager.GetObject("flecha-black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GitHub_Logo {
+            get {
+                object obj = ResourceManager.GetObject("GitHub_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GitHub_Logo_White {
+            get {
+                object obj = ResourceManager.GetObject("GitHub_Logo_White", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
         internal static System.Drawing.Bitmap minimize_icon1 {
             get {
                 object obj = ResourceManager.GetObject("minimize-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PinClipart_com_crack_clip_art_1561590 {
+            get {
+                object obj = ResourceManager.GetObject("PinClipart.com_crack-clip-art_1561590", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

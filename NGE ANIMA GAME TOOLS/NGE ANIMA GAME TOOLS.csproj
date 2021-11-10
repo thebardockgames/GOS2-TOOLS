@@ -134,8 +134,17 @@
     <Compile Include="bmpviewer.Designer.cs">
       <DependentUpon>bmpviewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="acerca_de.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acerca_de.Designer.cs">
+      <DependentUpon>acerca_de.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="acerca_de.resx">
+      <DependentUpon>acerca_de.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Convertidores.resx">
       <DependentUpon>Convertidores.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +210,10 @@
     <Content Include="eva-black2.ico" />
     <Content Include="eva_black_HJx_icon.ico" />
     <Content Include="eva__white_AI3_icon.ico" />
+    <None Include="Resources\PinClipart.com_crack-clip-art_1561590.png" />
+    <None Include="Resources\facebook.png" />
+    <None Include="Resources\GitHub_Logo_White.png" />
+    <None Include="Resources\GitHub_Logo.png" />
     <None Include="Resources\base.png" />
     <None Include="Resources\minimize-icon-black.png" />
     <None Include="Resources\minimize-icon1.png" />

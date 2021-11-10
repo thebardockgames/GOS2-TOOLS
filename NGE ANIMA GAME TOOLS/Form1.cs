@@ -19,7 +19,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         public home()
         {
             InitializeComponent();
-            initalized = true;
+            
             client = new DiscordRpcClient("822813361040785458");
             client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
             client.Initialize();
@@ -246,6 +246,13 @@ namespace NGE_ANIMA_GAME_TOOLS
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form ac = new acerca_de();
+            ac.Show();
+            this.Hide();
         }
     }
 }
