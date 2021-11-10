@@ -50,7 +50,7 @@ namespace NGE_ANIMA_GAME_TOOLS
 
 
         public DiscordRpcClient client;
-        private bool initalized = false;
+       
 
         public void Form1_Load(object sender, EventArgs e)
         {
