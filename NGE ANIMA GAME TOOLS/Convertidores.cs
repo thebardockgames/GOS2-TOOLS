@@ -77,7 +77,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             if (tx3file.ShowDialog() == DialogResult.OK)
             {
-                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk", tx3file.SafeFileName);
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk", tx3file.SafeFileName);
                 if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + tx3file.SafeFileName))
                 {
                     MessageBox.Show("Operacion Exitosa");
@@ -113,7 +113,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             if (bp3file.ShowDialog() == DialogResult.OK)
             {
-                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", bp3file.SafeFileName);
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", bp3file.SafeFileName);
                 if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + bp3file.SafeFileName))
                 {
                     MessageBox.Show("Operacion Exitosa");
@@ -131,7 +131,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             if (bmpfile.ShowDialog() == DialogResult.OK)
             {
-                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", bmpfile.SafeFileName);
+                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", bmpfile.SafeFileName);
                 if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + bmpfile.SafeFileName))
                 {
                     MessageBox.Show("Operacion Exitosa");
