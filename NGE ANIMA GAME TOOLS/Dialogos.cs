@@ -46,8 +46,6 @@ namespace NGE_ANIMA_GAME_TOOLS
         List<string> lista = new List<string>();
         string line;
         string lineanterior;
-        string predialogue;
-        string postdialogue;
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -92,7 +90,6 @@ namespace NGE_ANIMA_GAME_TOOLS
                     var sinarrobac = textocf.Replace("@n", System.Environment.NewLine);
                     textBox2.Text = sinarrobac + sinarrobab;
                     return;
-
                 }
                 return;
             }
@@ -246,11 +243,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string line4 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 textBox3.Text = line4;
             }
-
             textBox1.Text = line;
-
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -297,7 +290,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 int linea2 = Convert.ToInt32(numberline2);
                 string line4 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 textBox3.Text = line4;
-            }
+            } 
 
         }
 
@@ -426,6 +419,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             List<string> lines = System.IO.File.ReadAllLines(path).ToList<string>();
             lines[linea2] = textBox3.Text;
             System.IO.File.WriteAllLines(path, lines, Encoding.Default);
+        }
+
+        private void Dialogos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
