@@ -213,6 +213,16 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap setting {
+            get {
+                object obj = ResourceManager.GetObject("setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap toppng_com_kudos_back_white_icon_600x1059 {
             get {
                 object obj = ResourceManager.GetObject("toppng.com-kudos-back-white-icon-600x1059", resourceCulture);
