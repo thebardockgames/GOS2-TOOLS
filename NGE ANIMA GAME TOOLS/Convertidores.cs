@@ -77,8 +77,8 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             if (tx3file.ShowDialog() == DialogResult.OK)
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk", tx3file.SafeFileName);
-                if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + tx3file.SafeFileName))
+                System.Diagnostics.Process.Start(Properties.Settings.Default.gostx31, tx3file.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
+                if (File.Exists(Properties.Settings.Default.main_folder + tx3file.SafeFileName)) // @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\"
                 {
                     MessageBox.Show("Operacion Exitosa");
                     return;
@@ -95,14 +95,22 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             if (txtfile.ShowDialog() == DialogResult.OK)
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk", txtfile.SafeFileName);
-                if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + txtfile.SafeFileName))
+                try
                 {
-                    MessageBox.Show("Operacion Exitosa");
+                    Process.Start(Properties.Settings.Default.gostx31, txtfile.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
+                    if (File.Exists(Properties.Settings.Default.main_folder + txtfile.SafeFileName)) // @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\"
+                    {
+                        MessageBox.Show("Operacion Exitosa");
+                        return;
+                    }
+                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
-                MessageBox.Show("Operacion Fallida");
-                return;
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             MessageBox.Show("Seleccione un archivo valido");
@@ -113,14 +121,22 @@ namespace NGE_ANIMA_GAME_TOOLS
         {
             if (bp3file.ShowDialog() == DialogResult.OK)
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", bp3file.SafeFileName);
-                if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + bp3file.SafeFileName))
+                try
                 {
-                    MessageBox.Show("Operacion Exitosa");
+                    Process.Start(Properties.Settings.Default.gosbp3pk1, bp3file.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk"
+                    if (File.Exists(Properties.Settings.Default.main_folder + bp3file.SafeFileName))
+                    {
+                        MessageBox.Show("Operacion Exitosa");
+                        return;
+                    }
+                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
-                MessageBox.Show("Operacion Fallida");
-                return;
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             MessageBox.Show("Seleccione un archivo valido");
@@ -129,16 +145,24 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void bmp_bp3_Click(object sender, EventArgs e)
         {
-            if (bmpfile.ShowDialog() == DialogResult.OK)
+            try
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", bmpfile.SafeFileName);
-                if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + bmpfile.SafeFileName))
+                if (bmpfile.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Operacion Exitosa");
+                    Process.Start(Properties.Settings.Default.gosbp3pk1, bmpfile.SafeFileName); // default @"C:\Program Files(x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk
+                    if (File.Exists(Properties.Settings.Default.main_folder + bmpfile.SafeFileName))
+                    {
+                        MessageBox.Show("Operacion Exitosa");
+                        return;
+                    }
+                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
-                MessageBox.Show("Operacion Fallida");
-                return;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             MessageBox.Show("Seleccione un archivo valido");

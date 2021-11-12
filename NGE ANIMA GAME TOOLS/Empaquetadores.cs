@@ -73,17 +73,34 @@ namespace NGE_ANIMA_GAME_TOOLS
             DialogResult dialogResult = MessageBox.Show("Deseas compilar el texto?", "Confirmacion", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst.txt exec");
-                System.Threading.Thread.Sleep(1500);
-                DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
-                if (dialogResult1 == DialogResult.Yes)
+
+                try
                 {
-                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
-                    return;
+                    Process.Start(Properties.Settings.Default.goslb5pk1, "gosflst.txt exec"); //@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk"
+                    System.Threading.Thread.Sleep(1500);
+                    DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult1 == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            Process.Start(Properties.Settings.Default.run_game_exe); // default @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk"
+                            return;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Ocurrio una excepción");
+
+                        }
+                    }
+                    else if (dialogResult1 == DialogResult.No)
+                    {
+                        return;
+                    }
                 }
-                else if (dialogResult1 == DialogResult.No)
+                catch (Exception ex)
                 {
-                    return;
+
+                    MessageBox.Show(ex.Message , "Error de ficheros", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if (dialogResult == DialogResult.No)
@@ -94,18 +111,18 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void empimagenes_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Deseas compilar las imagenes?", "Confirmacion", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Deseas compilar las imagenes?", "Confirmación", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
-                System.Threading.Thread.Sleep(1500);
-                DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
-
                 try
                 {
+
+                    Process.Start(Properties.Settings.Default.goslb5pk1, "gosflst1.txt event"); //@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk"
+                    System.Threading.Thread.Sleep(1500);
+                    DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso\n ¿Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                     if (dialogResult1 == DialogResult.Yes)
                     {
-                        System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
+                        Process.Start(Properties.Settings.Default.run_game_exe);
                         return;
                     }
                     else if (dialogResult1 == DialogResult.No)
@@ -114,7 +131,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                     }
                 }
                 catch (Exception ex) {
-                    MessageBox.Show("Error ", "Error: " + ex.Message); // ex almacena el error obtenido del sistema
+                    MessageBox.Show(ex.Message, "Error de ficheros ", MessageBoxButtons.OK,MessageBoxIcon.Error); // ex almacena el error obtenido del sistema
                     }
                 }
             

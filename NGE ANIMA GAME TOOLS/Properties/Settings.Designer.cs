@@ -25,7 +25,7 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\")]
         public string main_folder {
             get {
                 return ((string)(this["main_folder"]));

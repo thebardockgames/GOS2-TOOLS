@@ -111,9 +111,9 @@ namespace NGE_ANIMA_GAME_TOOLS
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     
-                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk", openFileDialog1.SafeFileName);
+                    Process.Start(Properties.Settings.Default.goslb5un1, openFileDialog1.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk"
                     System.Threading.Thread.Sleep(2000);
-                    if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\t1101.tx3"))
+                    if (File.Exists(Properties.Settings.Default.main_folder + "t1101.tx3")) // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\t1101.tx3"
                     {
                         MessageBox.Show("Operacion Exitosa");
                         return;
@@ -124,7 +124,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             }
             catch (Exception ex) {
 
-                MessageBox.Show("Seleccione un archivo valido\n " + ex.Message );
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             } 
