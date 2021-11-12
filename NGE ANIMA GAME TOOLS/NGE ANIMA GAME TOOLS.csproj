@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="config.cs" />
     <Compile Include="Convertidores.cs">
       <SubType>Form</SubType>
     </Compile>

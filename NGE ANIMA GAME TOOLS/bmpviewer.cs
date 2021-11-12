@@ -87,16 +87,16 @@ namespace NGE_ANIMA_GAME_TOOLS
                     {
                         File.Delete(imagenreemplazar);
                         File.Copy(Filedialogbmp.FileName, imagenreemplazar);
-                        System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
+                        Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
                         DialogResult compilar1 = MessageBox.Show("Desea compilar?", "Confirmacion", MessageBoxButtons.YesNo);
                         if (compilar1 == DialogResult.Yes)
                         {
-                            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
+                            Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                             System.Threading.Thread.Sleep(1500);
                             DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                             if (dialogResult1 == DialogResult.Yes)
                             {
-                                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
+                                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
                                 return;
                             }
                             else if (dialogResult1 == DialogResult.No)
@@ -110,16 +110,16 @@ namespace NGE_ANIMA_GAME_TOOLS
                     }
 
                     File.Copy(Filedialogbmp.FileName, imagenreemplazar);
-                    System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
+                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk", fileimage + ".bmp");
                     DialogResult compilar = MessageBox.Show("Desea compilar?", "Confirmacion", MessageBoxButtons.YesNo);
                     if (compilar == DialogResult.Yes)
                     {
-                        System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
+                        Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                         System.Threading.Thread.Sleep(1500);
                         DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Quieres iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                         if (dialogResult1 == DialogResult.Yes)
                         {
-                            System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
+                            Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
                             return;
                         }
                         else if (dialogResult1 == DialogResult.No)
@@ -170,12 +170,12 @@ namespace NGE_ANIMA_GAME_TOOLS
             DialogResult compilar = MessageBox.Show("Quieres compilar las imagenes?", "Confirmacion", MessageBoxButtons.YesNo);
             if (compilar == DialogResult.Yes)
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
+                Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst1.txt event");
                 System.Threading.Thread.Sleep(1500);
                 DialogResult rungos = MessageBox.Show("Empaquetado exitoso, Quieres iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
                 if (rungos == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
+                    Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
                     return;
                 }
                 else if (rungos == DialogResult.No)

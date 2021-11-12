@@ -86,8 +86,8 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string arrobab = "@n";
                 if (textBox2.Text.Contains(arrobab))
                 {
-                    var sinarrobab = textob4.Replace("@n", System.Environment.NewLine);
-                    var sinarrobac = textocf.Replace("@n", System.Environment.NewLine);
+                    var sinarrobab = textob4.Replace("@n", Environment.NewLine);
+                    var sinarrobac = textocf.Replace("@n", Environment.NewLine);
                     textBox2.Text = sinarrobac + sinarrobab;
                     return;
                 }
@@ -105,7 +105,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string arroba = "@n";
                 if (textBox2.Text.Contains(arroba))
                 {
-                    var sinarroba = texto4.Replace("@n", System.Environment.NewLine);
+                    var sinarroba = texto4.Replace("@n", Environment.NewLine);
                     textBox2.Text = sinarroba;
 
                 }
@@ -152,8 +152,8 @@ namespace NGE_ANIMA_GAME_TOOLS
                 string arrobab = "@n";
                 if (textBox2.Text.Contains(arrobab))
                 {
-                    var sinarrobab = textob4.Replace("@n", System.Environment.NewLine);
-                    var sinarrobac = textocf.Replace("@n", System.Environment.NewLine);
+                    var sinarrobab = textob4.Replace("@n", Environment.NewLine);
+                    var sinarrobac = textocf.Replace("@n", Environment.NewLine);
                     textBox2.Text = sinarrobac + sinarrobab;
                     return;
 
@@ -257,9 +257,9 @@ namespace NGE_ANIMA_GAME_TOOLS
             string numberline = listastring.Split("\n".ToCharArray())[linecounter];
             int linea1 = Convert.ToInt32(numberline);
             string path = Pathgame + filetxtname;
-            List<string> lines = System.IO.File.ReadAllLines(path).ToList<string>();
+            List<string> lines = File.ReadAllLines(path).ToList<string>();
             lines[linea1] = textBox1.Text;
-            System.IO.File.WriteAllLines(path, lines, Encoding.Default);
+            File.WriteAllLines(path, lines, Encoding.Default);
         }
 
         private void button4_Click(object sender, EventArgs e)
