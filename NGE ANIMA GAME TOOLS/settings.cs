@@ -68,7 +68,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 try
                 {
 
-                    Properties.Settings.Default.main_folder = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2";
+                    Properties.Settings.Default.main_folder = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\";
                     Properties.Settings.Default.run_game_exe = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk";
                     Properties.Settings.Default.goslb5un1 = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk";
                     Properties.Settings.Default.goslb5pk1 = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk";

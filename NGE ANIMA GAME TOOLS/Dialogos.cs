@@ -10,7 +10,7 @@ namespace NGE_ANIMA_GAME_TOOLS
 
     public partial class Dialogos : Form
     {
-        public const string Pathgame = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\";
+        public string Pathgame = Properties.Settings.Default.main_folder;
         public const string palabra_buscar = "print";
         public string listastring;
         public string linea;
@@ -167,7 +167,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             {
                 return;
             }
-            System.IO.StreamReader file = new System.IO.StreamReader(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
+            StreamReader file = new StreamReader(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
             filetxtname = listBoxtxt.SelectedItem.ToString();
             lista.Clear();
             linecounter = 0;
@@ -296,43 +296,59 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void compilarbutton_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Deseas compilar el texto?", "Confirmacion", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk", "gosflst.txt exec");
-                System.Threading.Thread.Sleep(1500);
-                DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
-                if (dialogResult1 == DialogResult.Yes)
+                DialogResult dialogResult = MessageBox.Show("Deseas compilar el texto?", "Confirmacion", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk");
-                    return;
+                    System.Diagnostics.Process.Start(Properties.Settings.Default.goslb5pk1, "gosflst.txt exec"); // default @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk"
+                    System.Threading.Thread.Sleep(1500);
+                    DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult1 == DialogResult.Yes)
+                    {
+                        System.Diagnostics.Process.Start(Properties.Settings.Default.run_game_exe); // default @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk"
+                        return;
+                    }
+                    else if (dialogResult1 == DialogResult.No)
+                    {
+                        return;
+                    }
                 }
-                else if (dialogResult1 == DialogResult.No)
+                else if (dialogResult == DialogResult.No)
                 {
                     return;
                 }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception ex)
             {
-                return;
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void tx3converter_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Convertir " + listBoxtxt.SelectedItem + " a TX3?", "Confirmacion", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                System.Diagnostics.Process.Start(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk", listBoxtxt.SelectedItem.ToString());
-                if (File.Exists(@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\" + listBoxtxt.SelectedItem.ToString()))
+                DialogResult dialogResult = MessageBox.Show("Convertir " + listBoxtxt.SelectedItem + " a TX3?", "Confirmacion", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Operacion Exitosa");
+                    System.Diagnostics.Process.Start(Properties.Settings.Default.gostx31, listBoxtxt.SelectedItem.ToString()); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
+                    if (File.Exists(Properties.Settings.Default.main_folder + listBoxtxt.SelectedItem.ToString())) // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\
+                    {
+                        MessageBox.Show("Operacion Exitosa");
+                        return;
+                    }
+                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
-                MessageBox.Show("Operacion Fallida");
                 return;
             }
-            return;
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="main_folder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\</Value>
     </Setting>
     <Setting Name="run_game_exe" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk</Value>
