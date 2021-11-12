@@ -25,13 +25,85 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ruta_del_juego {
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2")]
+        public string main_folder {
             get {
-                return ((string)(this["ruta_del_juego"]));
+                return ((string)(this["main_folder"]));
             }
             set {
-                this["ruta_del_juego"] = value;
+                this["main_folder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\exe\\00test03-latin.exe.lnk")]
+        public string run_game_exe {
+            get {
+                return ((string)(this["run_game_exe"]));
+            }
+            set {
+                this["run_game_exe"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\goslb5un1.exe.lnk")]
+        public string goslb5un1 {
+            get {
+                return ((string)(this["goslb5un1"]));
+            }
+            set {
+                this["goslb5un1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\goslb5pk1.exe.lnk")]
+        public string goslb5pk1 {
+            get {
+                return ((string)(this["goslb5pk1"]));
+            }
+            set {
+                this["goslb5pk1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\gosbp3un1.exe.lnk")]
+        public string gosbp3un1 {
+            get {
+                return ((string)(this["gosbp3un1"]));
+            }
+            set {
+                this["gosbp3un1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\gosbp3pk1.exe.lnk")]
+        public string gosbp3pk1 {
+            get {
+                return ((string)(this["gosbp3pk1"]));
+            }
+            set {
+                this["gosbp3pk1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\gostx31.exe.lnk")]
+        public string gostx31 {
+            get {
+                return ((string)(this["gostx31"]));
+            }
+            set {
+                this["gostx31"] = value;
             }
         }
     }

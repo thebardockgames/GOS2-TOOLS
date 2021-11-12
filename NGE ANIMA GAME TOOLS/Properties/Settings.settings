@@ -2,8 +2,26 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NGE_ANIMA_GAME_TOOLS.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ruta_del_juego" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="main_folder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2</Value>
+    </Setting>
+    <Setting Name="run_game_exe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk</Value>
+    </Setting>
+    <Setting Name="goslb5un1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5un1.exe.lnk</Value>
+    </Setting>
+    <Setting Name="goslb5pk1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk</Value>
+    </Setting>
+    <Setting Name="gosbp3un1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3un1.exe.lnk</Value>
+    </Setting>
+    <Setting Name="gosbp3pk1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk</Value>
+    </Setting>
+    <Setting Name="gostx31" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk</Value>
     </Setting>
   </Settings>
 </SettingsFile>
