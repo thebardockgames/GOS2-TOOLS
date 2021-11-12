@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace NGE_ANIMA_GAME_TOOLS
@@ -128,8 +127,6 @@ namespace NGE_ANIMA_GAME_TOOLS
                 MessageBox.Show("Seleccione un archivo valido\n " + ex.Message );
                 return;
             }
-
-               
             } 
 
         private void button2_Click(object sender, EventArgs e)
@@ -193,8 +190,14 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            client.Deinitialize();
-            Application.Exit();
+
+            if (MessageBox.Show("¿Desea salir del programa?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                client.Deinitialize();
+                Application.Exit();
+            }
+
+            
         }
 
 
@@ -253,6 +256,13 @@ namespace NGE_ANIMA_GAME_TOOLS
             Form ac = new acerca_de();
             ac.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form set = new settings();
+            this.Hide();
+            set.Show();
         }
     }
 }
