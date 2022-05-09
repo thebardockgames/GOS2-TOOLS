@@ -27,7 +27,9 @@ namespace NGE_ANIMA_GAME_TOOLS
              string gosbp3un1 = Properties.Settings.Default.gosbp3un1;
              string gosbp3pk1 = Properties.Settings.Default.gosbp3pk1;
              string gostx31 = Properties.Settings.Default.gostx31;
-            
+            string realesrgan = Properties.Settings.Default.realesrgan;
+
+
             txt_mainFolder.Text = main_folder; // folder principal
             txt_rungame.Text    = run_game_exe; // ruta del ejecutable del juego
             txt_goslb5un1.Text  = goslb5un1;
@@ -35,6 +37,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             txt_gosbp3un1.Text  = gosbp3un1;
             txt_gosbp3pk1.Text  = gosbp3pk1;
             txt_gostx31.Text    = gostx31;
+            txt_realesrgan.Text = realesrgan;
 
     }
 
@@ -59,6 +62,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             txt_gosbp3un1.ReadOnly = false;
             txt_gosbp3pk1.ReadOnly = false;
             txt_gostx31.ReadOnly = false;
+            txt_realesrgan.ReadOnly = false;
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
@@ -75,6 +79,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                     Properties.Settings.Default.gosbp3un1 = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3un1.exe.lnk";
                     Properties.Settings.Default.gosbp3pk1 = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk";
                     Properties.Settings.Default.gostx31 = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk";
+                    Properties.Settings.Default.realesrgan = @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\Realesrgan\realesrgan-ncnn-vulkan.exe";
                     Properties.Settings.Default.Save();
 
                     if (MessageBox.Show("Configuración restablecida", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
@@ -105,6 +110,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 Properties.Settings.Default.gosbp3un1 = txt_gosbp3un1.Text;
                 Properties.Settings.Default.gosbp3pk1 = txt_gosbp3pk1.Text;
                 Properties.Settings.Default.gostx31 = txt_gostx31.Text;
+                Properties.Settings.Default.realesrgan = txt_realesrgan.Text;
                 Properties.Settings.Default.Save();
 
                     if (MessageBox.Show("Configuración guardada", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
