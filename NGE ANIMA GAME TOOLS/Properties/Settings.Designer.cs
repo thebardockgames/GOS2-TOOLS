@@ -9,20 +9,20 @@
 //------------------------------------------------------------------------------
 
 namespace NGE_ANIMA_GAME_TOOLS.Properties {
-    
-    
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
+
         public static Settings Default {
             get {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\")]
@@ -34,7 +34,7 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["main_folder"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\exe\\00test03-latin.exe.lnk")]
@@ -46,7 +46,7 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["run_game_exe"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\goslb5un1.exe.lnk")]
@@ -58,7 +58,7 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["goslb5un1"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\goslb5pk1.exe.lnk")]
@@ -70,7 +70,7 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["goslb5pk1"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\gosbp3un1.exe.lnk")]
@@ -82,10 +82,27 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["gosbp3un1"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\gosbp3pk1.exe.lnk")]
+
+        public string realesrgan
+        {
+            get
+            {
+                return ((string)(this["realesrgan"]));
+            }
+            set
+            {
+                this["realesrgan"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\Realesrgan\\realesrgan-ncnn-vulkan.exe")]
+
         public string gosbp3pk1 {
             get {
                 return ((string)(this["gosbp3pk1"]));
@@ -94,7 +111,7 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["gosbp3pk1"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\GAINAX\\IRONMAIDEN2\\gostx31.exe.lnk")]
@@ -106,5 +123,6 @@ namespace NGE_ANIMA_GAME_TOOLS.Properties {
                 this["gostx31"] = value;
             }
         }
+
     }
 }

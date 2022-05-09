@@ -110,7 +110,6 @@ namespace NGE_ANIMA_GAME_TOOLS
 
                 }
             }
-
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -257,9 +256,10 @@ namespace NGE_ANIMA_GAME_TOOLS
             string numberline = listastring.Split("\n".ToCharArray())[linecounter];
             int linea1 = Convert.ToInt32(numberline);
             string path = Pathgame + filetxtname;
-            List<string> lines = File.ReadAllLines(path).ToList<string>();
+            List<string> lines = File.ReadAllLines(path, Encoding.Default).ToList<string>();
             lines[linea1] = textBox1.Text;
             File.WriteAllLines(path, lines, Encoding.Default);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -333,6 +333,9 @@ namespace NGE_ANIMA_GAME_TOOLS
                 DialogResult dialogResult = MessageBox.Show("Convertir " + listBoxtxt.SelectedItem + " a TX3?", "Confirmacion", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    //string text = File.ReadAllText(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
+                    //text = text.Replace("_n", "ñ");
+                    //File.WriteAllText(Pathgame + listBoxtxt.SelectedItem, text, Encoding.Default);
                     System.Diagnostics.Process.Start(Properties.Settings.Default.gostx31, listBoxtxt.SelectedItem.ToString()); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
                     if (File.Exists(Properties.Settings.Default.main_folder + listBoxtxt.SelectedItem.ToString())) // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\
                     {
@@ -431,7 +434,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
             int linea2 = Convert.ToInt32(numberline2);
             string path = Pathgame + filetxtname;
-            List<string> lines = File.ReadAllLines(path).ToList<string>();
+            List<string> lines = File.ReadAllLines(path, Encoding.Default).ToList<string>();
             lines[linea2] = textBox3.Text;
             File.WriteAllLines(path, lines, Encoding.Default);
         }

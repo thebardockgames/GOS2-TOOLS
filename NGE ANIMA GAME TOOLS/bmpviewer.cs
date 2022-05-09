@@ -10,12 +10,12 @@ namespace NGE_ANIMA_GAME_TOOLS
     public partial class bmpviewer : Form
     {
         public string bp3temp;
+        public int filestatus;
         private int mov;
         private int movX;
         private int movY;
 
         public DiscordRpcClient client;
-
 
 
         public bmpviewer()
@@ -61,7 +61,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             try
             {
                 Process.Start(Properties.Settings.Default.gosbp3un1, "temp.gos"); //@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3un1.exe.lnk"
-                System.Threading.Thread.Sleep(150);
+                System.Threading.Thread.Sleep(180);
                 FileStream fs = new FileStream(Properties.Settings.Default.main_folder + "temp.bmp", FileMode.Open, FileAccess.Read); //@"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\temp.bmp"
                 pictureBox1.Image = Image.FromStream(fs);
                 fs.Close();
@@ -289,5 +289,21 @@ namespace NGE_ANIMA_GAME_TOOLS
             home f1 = new home();
             MessageBox.Show(client.CurrentPresence.State.ToString());
         }
+
+        private void remasterbutton_Click(object sender, EventArgs e)
+        {            
+            string currentfile = listBoxImages.SelectedItem.ToString().Replace(".bp3", "");
+            string folder_remaster = '\u0022' + Properties.Settings.Default.realesrgan.ToString().Replace("realesrgan-ncnn-vulkan.exe", "Remastered\\");
+            string startInfo = '\u0022' + Properties.Settings.Default.realesrgan + '\u0022';
+            string main_folder_path = '\u0022' + Properties.Settings.Default.main_folder;
+            string filepath = folder_remaster + currentfile + ".jpg" + '\u0022';
+
+            //Console.WriteLine(startInfo + " -i " +main_folder_path + "temp.bmp" + '\u0022' + " -o " + folder_remaster + currentfile + ".jpg" + '\u0022' );
+            Process.Start(startInfo, " -i " + main_folder_path + "temp.bmp" + '\u0022' + " -o " + folder_remaster + currentfile + ".jpg" + '\u0022');
+            System.Threading.Thread.Sleep(5000);
+            Process.Start(filepath);
+        }
+
+
     }
 }
