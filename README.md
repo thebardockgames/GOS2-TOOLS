@@ -1,7 +1,7 @@
 # GOS2-TOOLS
 Herramienta diseñada por TheBardockGames#0792 para la modificacion de "Neon Genesis Evangelion: Girlfriend of steel 2" para el equipo de NGE ANIMA https://www.facebook.com/NGEAnima/
 
-![alt text](https://cdn.discordapp.com/attachments/274425161678192640/822925589480603678/unknown.png)
+![alt text](https://cdn.discordapp.com/attachments/274425161678192640/977807099193077800/unknown.png)
 
 
 # COMPILADOR DE DIALOGOS E IMAGENES
