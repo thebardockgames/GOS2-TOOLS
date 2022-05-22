@@ -1,5 +1,5 @@
 # GOS2-TOOLS
-Herramienta diseñada por TheBardockGames#0792 para la modificacion de "Neon Genesis Evangelion: Girlfriend of steel 2" para el equipo de NGE ANIMA https://www.facebook.com/NGEAnima/
+-Herramienta diseñada por TheBardockGames#0792 para la modificacion de "Neon Genesis Evangelion: Girlfriend of steel 2" para el equipo de NGE ANIMA https://www.facebook.com/NGEAnima/
 
 ![alt text](https://cdn.discordapp.com/attachments/274425161678192640/977807099193077800/unknown.png)
 
@@ -26,7 +26,7 @@ Herramienta diseñada por TheBardockGames#0792 para la modificacion de "Neon Gen
 
 ![image](https://user-images.githubusercontent.com/71587854/169680772-dea83780-5442-4dfd-87e5-a8d1457fac13.png)
 
-## Acknowledgments
+## Acknowledgments:
 
 - A huge thanks to "madman", who was the person who wrote the tools in 2008 that this program uses.
 - Thanks to "Sergey" from "hd-team", who gave us support to get and understand the tools that his team had used and for giving us the exe modified to work and show the letter "Ñ" and edit the exe to show in the main bar the name "NGE ANIMA - GIRLFRIEND OF STEEL 2", You are the best bro, Thanks for all the help.
