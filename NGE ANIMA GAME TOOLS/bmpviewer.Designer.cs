@@ -40,16 +40,17 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.listBoxImages = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.Filedialogbmp = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialogbmp = new System.Windows.Forms.FolderBrowserDialog();
             this.remasterbutton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.listbox_filesbase = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // bmpfiles
@@ -67,9 +68,9 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.groupBox1.Controls.Add(this.listBoxImages);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(542, 149);
+            this.groupBox1.Location = new System.Drawing.Point(542, 160);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(120, 291);
+            this.groupBox1.Size = new System.Drawing.Size(120, 280);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Imagenes";
@@ -126,7 +127,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.listBoxImages.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxImages.ForeColor = System.Drawing.Color.White;
             this.listBoxImages.FormattingEnabled = true;
-            this.listBoxImages.Location = new System.Drawing.Point(3, 102);
+            this.listBoxImages.Location = new System.Drawing.Point(3, 91);
             this.listBoxImages.Name = "listBoxImages";
             this.listBoxImages.Size = new System.Drawing.Size(114, 186);
             this.listBoxImages.TabIndex = 0;
@@ -153,19 +154,6 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::NGE_ANIMA_GAME_TOOLS.Properties.Resources.eva__white;
-            this.pictureBox4.Location = new System.Drawing.Point(542, 11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(118, 74);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 7;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
-            this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
             // 
             // Filedialogbmp
             // 
@@ -196,12 +184,39 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.groupBox3.Controls.Add(this.remasterbutton);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(542, 102);
+            this.groupBox3.Location = new System.Drawing.Point(542, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(118, 47);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Realesrgan (AI)";
+            this.groupBox3.Visible = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listbox_filesbase);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
+            this.groupBox4.Location = new System.Drawing.Point(541, 50);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(118, 104);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Archivos (Base)";
+            // 
+            // listbox_filesbase
+            // 
+            this.listbox_filesbase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listbox_filesbase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(180)))));
+            this.listbox_filesbase.ForeColor = System.Drawing.Color.White;
+            this.listbox_filesbase.FormattingEnabled = true;
+            this.listbox_filesbase.Location = new System.Drawing.Point(1, 19);
+            this.listbox_filesbase.Name = "listbox_filesbase";
+            this.listbox_filesbase.Size = new System.Drawing.Size(114, 82);
+            this.listbox_filesbase.TabIndex = 10;
+            this.listbox_filesbase.SelectedIndexChanged += new System.EventHandler(this.listbox_filesbase_SelectedIndexChanged);
             // 
             // bmpviewer
             // 
@@ -209,20 +224,21 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(81)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(672, 448);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "bmpviewer";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.bmpviewer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -234,7 +250,6 @@ namespace NGE_ANIMA_GAME_TOOLS
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.ListBox listBoxImages;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog Filedialogbmp;
         private System.Windows.Forms.Label filename_label;
@@ -243,5 +258,7 @@ namespace NGE_ANIMA_GAME_TOOLS
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogbmp;
         private System.Windows.Forms.Button remasterbutton;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.ListBox listbox_filesbase;
     }
 }

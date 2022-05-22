@@ -44,7 +44,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.textcomp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.textcomp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.textcomp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.textcomp.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textcomp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textcomp.ForeColor = System.Drawing.Color.White;
             this.textcomp.Location = new System.Drawing.Point(73, 156);
             this.textcomp.Name = "textcomp";
@@ -62,11 +62,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             this.empimagenes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(109)))), ((int)(((byte)(60)))));
             this.empimagenes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(229)))), ((int)(((byte)(89)))));
             this.empimagenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.empimagenes.Font = new System.Drawing.Font("Laffayette Comic Pro", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empimagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empimagenes.ForeColor = System.Drawing.Color.White;
             this.empimagenes.Location = new System.Drawing.Point(73, 284);
             this.empimagenes.Name = "empimagenes";
-            this.empimagenes.Size = new System.Drawing.Size(121, 38);
+            this.empimagenes.Size = new System.Drawing.Size(121, 53);
             this.empimagenes.TabIndex = 12;
             this.empimagenes.Text = "EMP. IMAGENES";
             this.empimagenes.UseVisualStyleBackColor = true;
@@ -88,11 +88,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // imagenes_label
             // 
             this.imagenes_label.AutoSize = true;
-            this.imagenes_label.Font = new System.Drawing.Font("Laffayette Comic Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imagenes_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imagenes_label.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.imagenes_label.Location = new System.Drawing.Point(88, 254);
             this.imagenes_label.Name = "imagenes_label";
-            this.imagenes_label.Size = new System.Drawing.Size(101, 17);
+            this.imagenes_label.Size = new System.Drawing.Size(94, 18);
             this.imagenes_label.TabIndex = 15;
             this.imagenes_label.Text = "IMAGENES";
             this.imagenes_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,11 +100,11 @@ namespace NGE_ANIMA_GAME_TOOLS
             // dialogos_label
             // 
             this.dialogos_label.AutoSize = true;
-            this.dialogos_label.Font = new System.Drawing.Font("Laffayette Comic Pro", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dialogos_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dialogos_label.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.dialogos_label.Location = new System.Drawing.Point(88, 129);
             this.dialogos_label.Name = "dialogos_label";
-            this.dialogos_label.Size = new System.Drawing.Size(97, 17);
+            this.dialogos_label.Size = new System.Drawing.Size(93, 18);
             this.dialogos_label.TabIndex = 14;
             this.dialogos_label.Text = "DIALOGOS";
             this.dialogos_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

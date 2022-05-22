@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace NGE_ANIMA_GAME_TOOLS
@@ -12,9 +13,91 @@ namespace NGE_ANIMA_GAME_TOOLS
         private int movX;
         private int movY;
 
+        public int id_process_bmp { get; set; }
+
+
+        public string mainfolder
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(0).Take(1).First(); ;
+            }
+        }
+
+        public string rungame_exe
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(1).Take(1).First(); ;
+            }
+        }
+
+        public string goslb5un1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(2).Take(1).First(); ;
+            }
+        }
+
+        public string goslbpk1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(3).Take(1).First(); ;
+            }
+        }
+
+        public string gosbp3un1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(4).Take(1).First(); ;
+            }
+        }
+
+        public string gosbp3pk1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(5).Take(1).First(); ;
+            }
+        }
+        public string gostx31
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(6).Take(1).First(); ;
+            }
+        }
+
+        public string realesrgan
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(7).Take(1).First(); ;
+            }
+        }
+
+        public bool IsProcessOpen(int ide)
+        {
+
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+
+                if (clsProcess.Id == ide)
+                {
+
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public convertidores()
         {
             InitializeComponent();
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -75,16 +158,42 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void tx3_txt_Click(object sender, EventArgs e)
         {
+            tx3file.InitialDirectory = mainfolder + @"exec\";
+
             if (tx3file.ShowDialog() == DialogResult.OK)
             {
-                System.Diagnostics.Process.Start(Properties.Settings.Default.gostx31, tx3file.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
-                if (File.Exists(Properties.Settings.Default.main_folder + tx3file.SafeFileName)) // @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\"
+                string filename = tx3file.SafeFileName;
+
+                var p = new Process();
+                p.StartInfo.FileName = gostx31;
+                p.StartInfo.WorkingDirectory = mainfolder + @"exec\";
+                p.StartInfo.Arguments = tx3file.SafeFileName;
+
+                try
                 {
-                    MessageBox.Show("Operacion Exitosa");
+                    DialogResult dialogResult = MessageBox.Show("Convertir " + filename + " a TXT?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        p.Start();
+
+                        var procId = p.Id;
+
+                        while (true)
+                        {
+                            if (IsProcessOpen(procId) == false)
+                            {
+                                MessageBox.Show(filename + " Convertido a TXT con exito");
+                                break;
+                            }
+                        }
+                    }
                     return;
                 }
-                MessageBox.Show("Operacion Fallida");
-                return;
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             MessageBox.Show("Seleccione un archivo valido");
@@ -93,17 +202,35 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            txtfile.InitialDirectory = mainfolder + @"exec\";
+
             if (txtfile.ShowDialog() == DialogResult.OK)
             {
+                string filename = txtfile.SafeFileName;
+
+                var p = new Process();
+                p.StartInfo.FileName = gostx31;
+                p.StartInfo.WorkingDirectory = mainfolder + @"exec\";
+                p.StartInfo.Arguments = txtfile.SafeFileName;
+
                 try
                 {
-                    Process.Start(Properties.Settings.Default.gostx31, txtfile.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
-                    if (File.Exists(Properties.Settings.Default.main_folder + txtfile.SafeFileName)) // @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\"
+                    DialogResult dialogResult = MessageBox.Show("Convertir " + filename + " a TX3?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Operacion Exitosa");
-                        return;
+                        p.Start();
+
+                        var procId = p.Id;
+
+                        while (true)
+                        {
+                            if (IsProcessOpen(procId) == false)
+                            {
+                                MessageBox.Show(filename + " Convertido a TX3 con exito");
+                                break;
+                            }
+                        }
                     }
-                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
                 catch (Exception ex)
@@ -112,24 +239,39 @@ namespace NGE_ANIMA_GAME_TOOLS
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            MessageBox.Show("Seleccione un archivo valido");
-            return;
         }
 
         private void bp3_bmp_Click(object sender, EventArgs e)
         {
+            bp3file.InitialDirectory = mainfolder;
+
             if (bp3file.ShowDialog() == DialogResult.OK)
             {
+                string filename = bp3file.SafeFileName;
+
+                var p = new Process();
+                p.StartInfo.FileName = gosbp3un1;
+                p.StartInfo.WorkingDirectory = Path.GetDirectoryName(bp3file.FileName);
+                p.StartInfo.Arguments = bp3file.SafeFileName;
+
                 try
                 {
-                    Process.Start(Properties.Settings.Default.gosbp3pk1, bp3file.SafeFileName); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk"
-                    if (File.Exists(Properties.Settings.Default.main_folder + bp3file.SafeFileName))
+                    DialogResult dialogResult = MessageBox.Show("Convertir " + filename + " a BMP?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Operacion Exitosa");
-                        return;
+                        p.Start();
+
+                        var procId = p.Id;
+
+                        while (true)
+                        {
+                            if (IsProcessOpen(procId) == false)
+                            {
+                                MessageBox.Show(filename + " Convertido a BMP con exito");
+                                break;
+                            }
+                        }
                     }
-                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
                 catch (Exception ex)
@@ -138,35 +280,47 @@ namespace NGE_ANIMA_GAME_TOOLS
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            MessageBox.Show("Seleccione un archivo valido");
-            return;
         }
 
         private void bmp_bp3_Click(object sender, EventArgs e)
         {
-            try
+            bmpfile.InitialDirectory = mainfolder;
+
+            if (bmpfile.ShowDialog() == DialogResult.OK)
             {
-                if (bmpfile.ShowDialog() == DialogResult.OK)
+                string filename = bmpfile.SafeFileName;
+
+                var p = new Process();
+                p.StartInfo.FileName = gosbp3pk1;
+                p.StartInfo.WorkingDirectory = Path.GetDirectoryName(bmpfile.FileName);
+                p.StartInfo.Arguments = bmpfile.SafeFileName;
+
+                try
                 {
-                    Process.Start(Properties.Settings.Default.gosbp3pk1, bmpfile.SafeFileName); // default @"C:\Program Files(x86)\GAINAX\IRONMAIDEN2\gosbp3pk1.exe.lnk
-                    if (File.Exists(Properties.Settings.Default.main_folder + bmpfile.SafeFileName))
+                    DialogResult dialogResult = MessageBox.Show("Convertir " + filename + " a BP3?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Operacion Exitosa");
-                        return;
+                        p.Start();
+
+                        var procId = p.Id;
+
+                        while (true)
+                        {
+                            if (IsProcessOpen(procId) == false)
+                            {
+                                MessageBox.Show(filename + " Convertido a BP3 con exito");
+                                break;
+                            }
+                        }
                     }
-                    MessageBox.Show("Operacion Fallida");
                     return;
                 }
-            }
-            catch (Exception ex)
-            {
+                catch (Exception ex)
+                {
 
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            MessageBox.Show("Seleccione un archivo valido");
-            return;
         }
 
         private void bp3_bmp_MouseEnter(object sender, EventArgs e)

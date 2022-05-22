@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace NGE_ANIMA_GAME_TOOLS
@@ -10,6 +12,87 @@ namespace NGE_ANIMA_GAME_TOOLS
         private int mov;
         private int movX;
         private int movY;
+
+        public int id_process_bmp { get; set; }
+
+
+        public string mainfolder
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(0).Take(1).First(); ;
+            }
+        }
+
+        public string rungame_exe
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(1).Take(1).First(); ;
+            }
+        }
+
+        public string goslb5un1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(2).Take(1).First(); ;
+            }
+        }
+
+        public string goslbpk1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(3).Take(1).First(); ;
+            }
+        }
+
+        public string gosbp3un1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(4).Take(1).First(); ;
+            }
+        }
+
+        public string gosbp3pk1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(5).Take(1).First(); ;
+            }
+        }
+        public string gostx31
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(6).Take(1).First(); ;
+            }
+        }
+
+        public string realesrgan
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(7).Take(1).First(); ;
+            }
+        }
+
+        public bool IsProcessOpen(int ide)
+        {
+
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+
+                if (clsProcess.Id == ide)
+                {
+
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public Empaquetadores()
         {
@@ -149,6 +232,56 @@ namespace NGE_ANIMA_GAME_TOOLS
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Process.Start("https://twitter.com/TheBardockGames");
+        }
+
+        public void empaquetar(string gosflst, string filename)
+        {
+            var p = new Process();
+            var g = new Process();
+
+            string path = mainfolder + filename + @"\";
+
+            string o_idx = mainfolder + filename + ".idx";
+            string r_idx = path + filename + ".idx";
+
+            string o_lb5 = mainfolder + filename + ".lb5";
+            string r_lb5 = path + filename + ".lb5";
+
+            g.StartInfo.WorkingDirectory = mainfolder + @"\exe\";
+            g.StartInfo.UseShellExecute = true;
+            g.StartInfo.Verb = "runas";
+            g.StartInfo.FileName = rungame_exe;
+
+
+            //p.StartInfo.WorkingDirectory = mainfolder + listbox_filesbase.SelectedItem.ToString() + @"\";
+            p.StartInfo.FileName = goslbpk1;
+            p.StartInfo.Arguments = gosflst + " " + filename;
+
+            p.Start();
+            var procid = p.Id;
+
+            while (true)
+            {
+                if (IsProcessOpen(procid) == false)
+                {
+                    File.Delete(o_idx);
+                    File.Delete(o_lb5);
+                    File.Move(r_idx, o_idx);
+                    File.Move(r_lb5, o_lb5);
+
+                    DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Quieres iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult1 == DialogResult.Yes)
+                    {
+                        g.Start();
+                        break;
+                    }
+                    else if (dialogResult1 == DialogResult.No)
+                    {
+                        break;
+                    }
+                    break;
+                }
+            }
         }
     }
 }

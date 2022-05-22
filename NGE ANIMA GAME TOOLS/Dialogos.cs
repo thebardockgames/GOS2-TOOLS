@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,6 @@ namespace NGE_ANIMA_GAME_TOOLS
 
     public partial class Dialogos : Form
     {
-        public string Pathgame = Properties.Settings.Default.main_folder;
         public const string palabra_buscar = "print";
         public string listastring;
         public string linea;
@@ -19,13 +19,94 @@ namespace NGE_ANIMA_GAME_TOOLS
         public string dialogoactual;
         public int cantidadindex;
 
+        public int id_process_bmp { get; set; }
+
+
+        public string mainfolder
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(0).Take(1).First(); ;
+            }
+        }
+
+        public string rungame_exe
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(1).Take(1).First(); ;
+            }
+        }
+
+        public string goslb5un1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(2).Take(1).First(); ;
+            }
+        }
+
+        public string goslbpk1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(3).Take(1).First(); ;
+            }
+        }
+
+        public string gosbp3un1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(4).Take(1).First(); ;
+            }
+        }
+
+        public string gosbp3pk1
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(5).Take(1).First(); ;
+            }
+        }
+        public string gostx31
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(6).Take(1).First(); ;
+            }
+        }
+
+        public string realesrgan
+        {
+            get
+            {
+                return File.ReadLines(Environment.ExpandEnvironmentVariables(@"%localappdata%\NGE_ANIMA\GOS2-TOOLS\Config.ini")).Skip(7).Take(1).First(); ;
+            }
+        }
+
+        public bool IsProcessOpen(int ide)
+        {
+
+            foreach (Process clsProcess in Process.GetProcesses())
+            {
+
+                if (clsProcess.Id == ide)
+                {
+
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public Dialogos()
         {
             try
             {
                 InitializeComponent();
                 listBoxtxt.Items.Clear();
-                string folder = Pathgame;
+                string folder = mainfolder + @"\exec\";
                 string[] txtfiles = Directory.GetFiles(folder, "*.txt");
                 linecounter1.Text = "Linea: " + linecounter.ToString() + "/" + cantidadindex.ToString();
 
@@ -65,7 +146,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 }
                 string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
                 int linea2 = Convert.ToInt32(numberline2);
-                string line2 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
+                string line2 = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 textBox3.Text = line2;
                 lineanterior = line2;
                 var textob = textBox1.Text.Replace("print", "");
@@ -130,7 +211,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 }
                 string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
                 int linea2 = Convert.ToInt32(numberline2);
-                string line2 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
+                string line2 = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 lineanterior = line2;
                 var textob = textBox1.Text.Replace("print", "");
                 var textob1 = textob.Replace("@c", "");
@@ -166,7 +247,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             {
                 return;
             }
-            StreamReader file = new StreamReader(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
+            StreamReader file = new StreamReader(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default);
             filetxtname = listBoxtxt.SelectedItem.ToString();
             lista.Clear();
             linecounter = 0;
@@ -184,7 +265,7 @@ namespace NGE_ANIMA_GAME_TOOLS
 
                     int linea1 = Convert.ToInt32(numberline);
 
-                    string line = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea1).Take(1).First();
+                    string line = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea1).Take(1).First();
 
 
                     textBox1.Text = line;
@@ -234,12 +315,12 @@ namespace NGE_ANIMA_GAME_TOOLS
             linecounter1.Text = "Linea: " + linecounter2.ToString() + "/" + cantidadindex.ToString();
             string numberline = listastring.Split("\n".ToCharArray())[linecounter];
             int linea1 = Convert.ToInt32(numberline);
-            string line = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea1).Take(1).First();
+            string line = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea1).Take(1).First();
             if (dcombcheck.Checked == true)
             {
                 string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
                 int linea2 = Convert.ToInt32(numberline2);
-                string line4 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
+                string line4 = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 textBox3.Text = line4;
             }
             textBox1.Text = line;
@@ -255,7 +336,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             }
             string numberline = listastring.Split("\n".ToCharArray())[linecounter];
             int linea1 = Convert.ToInt32(numberline);
-            string path = Pathgame + filetxtname;
+            string path = mainfolder + @"\exec\" + filetxtname;
             List<string> lines = File.ReadAllLines(path, Encoding.Default).ToList<string>();
             lines[linea1] = textBox1.Text;
             File.WriteAllLines(path, lines, Encoding.Default);
@@ -282,13 +363,13 @@ namespace NGE_ANIMA_GAME_TOOLS
             linecounter1.Text = "Linea: " + linecounter2.ToString() + "/" + cantidadindex.ToString();
             string numberline = listastring.Split("\n".ToCharArray())[linecounter];
             int linea1 = Convert.ToInt32(numberline);
-            string line = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea1).Take(1).First();
+            string line = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea1).Take(1).First();
             textBox1.Text = line;
             if (dcombcheck.Checked == true)
             {
                 string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
                 int linea2 = Convert.ToInt32(numberline2);
-                string line4 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
+                string line4 = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 textBox3.Text = line4;
             } 
 
@@ -301,18 +382,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 DialogResult dialogResult = MessageBox.Show("Deseas compilar el texto?", "Confirmacion", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    System.Diagnostics.Process.Start(Properties.Settings.Default.goslb5pk1, "gosflst.txt exec"); // default @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\goslb5pk1.exe.lnk"
-                    System.Threading.Thread.Sleep(1500);
-                    DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Desea iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
-                    if (dialogResult1 == DialogResult.Yes)
-                    {
-                        System.Diagnostics.Process.Start(Properties.Settings.Default.run_game_exe); // default @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\exe\00test03-latin.exe.lnk"
-                        return;
-                    }
-                    else if (dialogResult1 == DialogResult.No)
-                    {
-                        return;
-                    }
+                    empaquetar("gosflst-texto.txt", "exec");
                 }
                 else if (dialogResult == DialogResult.No)
                 {
@@ -328,22 +398,29 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void tx3converter_Click(object sender, EventArgs e)
         {
+            var p = new Process();
+
+            p.StartInfo.WorkingDirectory = mainfolder + @"exec\";
+            p.StartInfo.FileName = gostx31;
+            p.StartInfo.Arguments = listBoxtxt.SelectedItem.ToString();
+
             try
             {
                 DialogResult dialogResult = MessageBox.Show("Convertir " + listBoxtxt.SelectedItem + " a TX3?", "Confirmacion", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //string text = File.ReadAllText(Pathgame + listBoxtxt.SelectedItem, Encoding.Default);
-                    //text = text.Replace("_n", "ñ");
-                    //File.WriteAllText(Pathgame + listBoxtxt.SelectedItem, text, Encoding.Default);
-                    System.Diagnostics.Process.Start(Properties.Settings.Default.gostx31, listBoxtxt.SelectedItem.ToString()); // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\gostx31.exe.lnk"
-                    if (File.Exists(Properties.Settings.Default.main_folder + listBoxtxt.SelectedItem.ToString())) // default - @"C:\Program Files (x86)\GAINAX\IRONMAIDEN2\
+                    p.Start();
+
+                    var procId = p.Id;
+
+                    while(true)
                     {
-                        MessageBox.Show("Operacion Exitosa");
-                        return;
+                        if (IsProcessOpen(procId) == false)
+                        {
+                            MessageBox.Show(listBoxtxt.SelectedItem.ToString() + " Convertido a Tx3 con exito");
+                            break;
+                        }
                     }
-                    MessageBox.Show("Operacion Fallida");
-                    return;
                 }
                 return;
             }
@@ -374,7 +451,7 @@ namespace NGE_ANIMA_GAME_TOOLS
                 textBox3.Enabled = Enabled;
                 string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
                 int linea2 = Convert.ToInt32(numberline2);
-                string line2 = File.ReadLines(Pathgame + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
+                string line2 = File.ReadLines(mainfolder + @"exec\" + listBoxtxt.SelectedItem, Encoding.Default).Skip(linea2).Take(1).First();
                 textBox3.Text = line2;
                 lineanterior = line2;
                 var textob = textBox1.Text.Replace("print", "");
@@ -433,7 +510,7 @@ namespace NGE_ANIMA_GAME_TOOLS
             }
             string numberline2 = listastring.Split("\n".ToCharArray())[linecounter - 1];
             int linea2 = Convert.ToInt32(numberline2);
-            string path = Pathgame + filetxtname;
+            string path = mainfolder + @"\exec\" + filetxtname;
             List<string> lines = File.ReadAllLines(path, Encoding.Default).ToList<string>();
             lines[linea2] = textBox3.Text;
             File.WriteAllLines(path, lines, Encoding.Default);
@@ -441,6 +518,57 @@ namespace NGE_ANIMA_GAME_TOOLS
 
         private void Dialogos_Load(object sender, EventArgs e)
         {
+
+        }
+
+        public void empaquetar(string gosflst, string filename)
+        {
+            var p = new Process();
+            var g = new Process();
+
+            string path = mainfolder + filename + @"\";
+
+            string o_idx = mainfolder + filename + ".idx";
+            string r_idx = path + filename + ".idx";
+
+            string o_lb5 = mainfolder + filename + ".lb5";
+            string r_lb5 = path + filename + ".lb5";
+
+            g.StartInfo.WorkingDirectory = mainfolder + @"\exe\";
+            g.StartInfo.UseShellExecute = true;
+            g.StartInfo.Verb = "runas";
+            g.StartInfo.FileName = rungame_exe;
+
+
+            p.StartInfo.WorkingDirectory = path;
+            p.StartInfo.FileName = goslbpk1;
+            p.StartInfo.Arguments = gosflst + " " + filename;
+
+            p.Start();
+            var procid = p.Id;
+
+            while (true)
+            {
+                if (IsProcessOpen(procid) == false)
+                {
+                    File.Delete(o_idx);
+                    File.Delete(o_lb5);
+                    File.Move(r_idx, o_idx);
+                    File.Move(r_lb5, o_lb5);
+
+                    DialogResult dialogResult1 = MessageBox.Show("Empaquetado exitoso, Quieres iniciar GOS2?", "Confirmacion", MessageBoxButtons.YesNo);
+                    if (dialogResult1 == DialogResult.Yes)
+                    {
+                        g.Start();
+                        break;
+                    }
+                    else if (dialogResult1 == DialogResult.No)
+                    {
+                        break;
+                    }
+                    break;
+                }
+            }
 
         }
     }
